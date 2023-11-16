@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-11-16T17:58:55Z"
+  labels:
+    app: vue-app
+  name: vue-app
+  namespace: project
+  resourceVersion: "271196"
+  uid: 45ea88bf-471b-4ad7-b6e2-ce9e8152043f
+spec:
+  clusterIP: 10.97.252.53
+  clusterIPs:
+  - 10.97.252.53
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30062
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: vue-app
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
